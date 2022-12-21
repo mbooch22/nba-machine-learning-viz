@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledAbout  = styled.div`
-  /* Add styles for the Home component here */
+  background-color: var(--primary-color);
 `;
 function About() {
   return (
