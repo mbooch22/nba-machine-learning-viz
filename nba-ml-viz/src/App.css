@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: grey;
 }
 
 .App-link {
@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+.tooltip3 {
+  position: absolute; 
+  background-color: rgb(255, 255, 255); 
+  border: 1px solid rgb(170, 170, 170); 
+  border-radius: 3px; 
+  box-shadow: rgb(170, 170, 170) 0px 0px 5px; 
+  text-align: center; 
+  width: fit-content; 
+  z-index: 10;
+  padding-bottom: 5px;
+}
+
+.profitLoss {
+  color: rgba(255, 0, 0, 0.644);
+}
+
+.profit {
+  color: green;
+}
+
+.chart {
+  position: absolute;
+  z-index: 0;
+  font-family: sans-serif;
+  color: #333;
+  background-color: var(--primary-color);
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+  text-align: center;
+}
+

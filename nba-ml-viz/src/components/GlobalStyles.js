@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 const theme = {
-    primaryColor: 'white',
-    secondaryColor: 'grey',
+    primaryColor: 'grey',
+    secondaryColor: 'white',
   };
   
 

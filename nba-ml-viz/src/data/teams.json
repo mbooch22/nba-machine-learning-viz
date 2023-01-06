@@ -1,0 +1,273 @@
+
+[
+    {
+      "teamId": 1,
+      "abbreviation": "ATL",
+      "teamName": "Atlanta Hawks",
+      "simpleName": "Hawks",
+      "location": "Atlanta",
+      "colorHome": "rgb(225,68,52)",
+      "colorAway": "rgb(196,214,0)"
+    },
+    {
+      "teamId": 2,
+      "abbreviation": "BOS",
+      "teamName": "Boston Celtics",
+      "simpleName": "Celtics",
+      "location": "Boston",
+      "colorHome": "rgb(0 122 51)",
+      "colorAway": "rgb(139 111 78)"
+    },
+    {
+      "teamId": 3,
+      "abbreviation": "BKN",
+      "teamName": "Brooklyn Nets",
+      "simpleName": "Nets",
+      "location": "Brooklyn",
+      "colorHome": "rgb(6,25,34)",
+      "colorAway": "rbg(255 255 255)"
+    },
+    {
+      "teamId": 4,
+      "abbreviation": "CHA",
+      "teamName": "Charlotte Hornets",
+      "simpleName": "Hornets",
+      "location": "Charlotte",
+      "colorHome": "rgb(0,120,140)",
+      "colorAway": "rbg(29,17,96)"
+    },
+    {
+      "teamId": 5,
+      "abbreviation": "CHI",
+      "teamName": "Chicago Bulls",
+      "simpleName": "Bulls",
+      "location": "Chicago",
+      "colorHome": "rgb(206,17,65)",
+      "colorAway": "rgb(6,25,34)"
+    },
+    {
+      "teamId": 6,
+      "abbreviation": "CLE",
+      "teamName": "Cleveland Cavaliers",
+      "simpleName": "Cavaliers",
+      "location": "Cleveland",
+      "colorHome": "rgb(134,0,56)",
+      "colorAway": "rgb(253,187,48)"
+    },
+    {
+      "teamId": 7,
+      "abbreviation": "DAL",
+      "teamName": "Dallas Mavericks",
+      "simpleName": "Mavericks",
+      "location": "Dallas",
+      "colorHome": "rgb(0,83,188)",
+      "colorAway": "rgb(0,43,920)"
+    },
+    {
+      "teamId": 8,
+      "abbreviation": "DEN",
+      "teamName": "Denver Nuggets",
+      "simpleName": "Nuggets",
+      "location": "Denver",
+      "colorHome": "rgb(13,34,64)",
+      "colorAway": "rgb(255,198,39)"
+    },
+    {
+      "teamId": 9,
+      "abbreviation": "DET",
+      "teamName": "Detroit Pistons",
+      "simpleName": "Pistons",
+      "location": "Detroit",
+      "colorHome": "rgb(29,66,138)",
+      "colorAway": "rgb(200,16,46)"
+    },
+    {
+      "teamId": 10,
+      "abbreviation": "GSW",
+      "teamName": "Golden State Warriors",
+      "simpleName": "Warriors",
+      "location": "Golden State",
+      "colorHome": "rgb(29,66,138)",
+      "colorAway": "rgb(255,199,44)"
+    },
+    {
+      "teamId": 11,
+      "abbreviation": "HOU",
+      "teamName": "Houston Rockets",
+      "simpleName": "Rockets",
+      "location": "Houston",
+      "colorHome": "rgb(206,17,65)",
+      "colorAway": "rgb(6,25,34)"
+    },
+    {
+      "teamId": 12,
+      "abbreviation": "IND",
+      "teamName": "Indiana Pacers",
+      "simpleName": "Pacers",
+      "location": "Indiana",
+      "colorHome": "rgb(0,45,98)",
+      "colorAway": "rgb(253,187,48)"
+    },
+    {
+      "teamId": 13,
+      "abbreviation": "LAC",
+      "teamName": "LA Clippers",
+      "simpleName": "Clippers",
+      "location": "Los Angeles",
+      "colorHome": "rgb(200,16,46)",
+      "colorAway": "rgb(29,66,148)"
+    },
+    {
+      "teamId": 14,
+      "abbreviation": "LAL",
+      "teamName": "Los Angeles Lakers",
+      "simpleName": "Lakers",
+      "location": "Los Angeles",
+      "colorHome": "rgb(85,37,130)",
+      "colorAway": "rgb(253,185,39)"
+    },
+    {
+      "teamId": 15,
+      "abbreviation": "MEM",
+      "teamName": "Memphis Grizzlies",
+      "simpleName": "Grizzlies",
+      "location": "Memphis",
+      "colorHome": "rgb(93,118,169)",
+      "colorAway": "rgb(18,23,63)"
+    },
+    {
+      "teamId": 16,
+      "abbreviation": "MIA",
+      "teamName": "Miami Heat",
+      "simpleName": "Heat",
+      "location": "Miami",
+      "colorHome": "rgb(6,25,34)",
+      "colorAway": "rgb(152,0,46)"
+    },
+    {
+      "teamId": 17,
+      "abbreviation": "MIL",
+      "teamName": "Milwaukee Bucks",
+      "simpleName": "Bucks",
+      "location": "Milwaukee",
+      "colorHome": "rgb(0,71,27)",
+      "colorAway": "rgb(240,235,210)"
+    },
+    {
+      "teamId": 18,
+      "abbreviation": "MIN",
+      "teamName": "Minnesota Timberwolves",
+      "simpleName": "Timberwolves",
+      "location": "Minnesota",
+      "colorHome": "rgb(12,35,64)",
+      "colorAway": "rgb(120,190,32)"
+    },
+    {
+      "teamId": 19,
+      "abbreviation": "NOP",
+      "teamName": "New Orleans Pelicans",
+      "simpleName": "Pelicans",
+      "location": "New Orleans",
+      "colorHome": "rgb(0,22,65)",
+      "colorAway": "rgb(180,151,90)"
+    },
+    {
+      "teamId": 20,
+      "abbreviation": "NYK",
+      "teamName": "New York Knicks",
+      "simpleName": "Knicks",
+      "location": "New York",
+      "colorHome": "rgb(0,107,182)",
+      "colorAway": "rgb(245,132,38)"
+    },
+    {
+      "teamId": 21,
+      "abbreviation": "OKC",
+      "teamName": "Oklahoma City Thunder",
+      "simpleName": "Thunder",
+      "location": "Oklahoma City",
+      "colorHome": "rgb(0,125,195)",
+      "colorAway": "rgb(239,59,36)"
+    },
+    {
+      "teamId": 22,
+      "abbreviation": "ORL",
+      "teamName": "Orlando Magic",
+      "simpleName": "Magic",
+      "location": "Orlando",
+      "colorHome": "rgb(0,125,197)",
+      "colorAway": "rgb(6,25,34)"
+    },
+    {
+      "teamId": 23,
+      "abbreviation": "PHI",
+      "teamName": "Philadelphia 76ers",
+      "simpleName": "76ers",
+      "location": "Philadelphia",
+      "colorHome": "rgb(0,107,182)",
+      "colorAway": "rgb(237,23,76)"
+    },
+    {
+      "teamId": 24,
+      "abbreviation": "PHX",
+      "teamName": "Phoenix Suns",
+      "simpleName": "Suns",
+      "location": "Phoenix",
+      "colorHome": "rgb(29,17,96)",
+      "colorAway": "rgb(229,95,32)"
+    },
+    {
+      "teamId": 25,
+      "abbreviation": "POR",
+      "teamName": "Portland Trail Blazers",
+      "simpleName": "Trail Blazers",
+      "location": "Portland",
+      "colorHome": "rgb(224,58,62)",
+      "colorAway": "rgb(6,25,34)"
+    },
+    {
+      "teamId": 26,
+      "abbreviation": "SAC",
+      "teamName": "Sacramento Kings",
+      "simpleName": "Kings",
+      "location": "Sacramento",
+      "colorHome": "rgb(91,43,130)",
+      "colorAway": "rgb(99,113,122)"
+    },
+    {
+      "teamId": 27,
+      "abbreviation": "SAS",
+      "teamName": "San Antonio Spurs",
+      "simpleName": "Spurs",
+      "location": "San Antonio",
+      "colorHome": "rgb(196,206,211)",
+      "colorAway": "rgb(6,25,34)"
+    },
+    {
+      "teamId": 28,
+      "abbreviation": "TOR",
+      "teamName": "Toronto Raptors",
+      "simpleName": "Raptors",
+      "location": "Toronto",
+      "colorHome": "rgb(206,17,65)",
+      "colorAway": "rgb(6,25,34)"
+    },
+    {
+      "teamId": 29,
+      "abbreviation": "UTA",
+      "teamName": "Utah Jazz",
+      "simpleName": "Jazz",
+      "location": "Utah",
+      "colorHome": "rgb(0,43,92)",
+      "colorAway": "rgb(249,160,27)"
+    },
+    {
+      "teamId": 30,
+      "abbreviation": "WAS",
+      "teamName": "Washington Wizards",
+      "simpleName": "Wizards",
+      "location": "Washington",
+      "colorHome": "rgb(227,24,55)",
+      "colorAway": "rgb(0,43,920)"
+    }
+  ]
