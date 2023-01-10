@@ -11,7 +11,7 @@ const Circles = (props) => {
   const navigate = useNavigate();
   const { circlesRef, data, setData, scrollSection, setScrollSection } = props;
   const previousScrollPosition = useRef(0);
-  let width = window.innerWidth - 100;
+  let width = window.innerWidth;
   let height = window.outerHeight;
   //const circlesRef = useRef(null);
   // const [data, setData] = useState([]);
@@ -21,7 +21,7 @@ const Circles = (props) => {
   useEffect(() => {
     // if (document.body.clientWidth !== 0) width = document.body.clientWidth - 100;
     // if (document.body.clientHeight !== 0) height = document.body.clientWidth;
-    width = document.body.clientWidth
+    //width = document.body.clientWidth
     const svg = d3.select(circlesRef.current)
       .attr('width', width)
       .attr('height', height);

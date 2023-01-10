@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import GameTooltip from '../CommonHome/GameTooltip';
 import AutoCarousel from './AutoCarousel';
 import GroupHeader from './GroupHeader';
-import Profit from './Profit';
+import Profit from '../CommonHome/Profit';
 
 const StyledMoreInfo = styled.div`
     padding-top: 50%;
@@ -62,7 +62,6 @@ const MoreInfoSection = (props) => {
     useEffect(() => {
         // if (document.body.clientWidth !== 0) width = document.body.clientWidth - 100;
         // if (document.body.clientHeight !== 0) height = document.body.clientWidth;
-        width = document.body.clientWidth
         const svg = d3.select(circlesRef.current)
             .attr('width', width)
             .attr('height', height);

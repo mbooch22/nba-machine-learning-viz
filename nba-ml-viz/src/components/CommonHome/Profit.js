@@ -28,7 +28,7 @@ const Profit = ({ i, profit, width, height }) => {
             break;
     }
     return (
-        <text className='moreinfo-profit' x={width / 2 + xAdjust} y={150}>
+        <text className='moreinfo-profit' x={width / 2 + xAdjust} y={height/8}>
             {profitFormatted}
         </text>
 

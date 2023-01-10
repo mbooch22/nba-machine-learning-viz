@@ -7,7 +7,7 @@ import Home  from './components/Home';
 import About from './components/About';
 import ResponsiveAppBar from './components/NavBar';
 import NotFound from './components/NotFound';
-import TeamPage from './components/TeamPage';
+import TeamPage from './components/TeamPage/TeamPage';
 import GamePage from './components/GamePage';
 
 

@@ -33,6 +33,27 @@ const CircleFunctions = {
         //   r: Math.random() * 20 + 10
     },
 
+
+    generateCircleDataTeam(width, height, teamName) {
+        const gamesFormatted = DataFunctions.getWinsLosses(gamesJson);
+        const gamesWonMinMax = d3.extent(gamesFormatted, d => d.totalProfit);
+        const sizeScale = d3.scaleLinear(gamesWonMinMax).range([9.5, 10.5]);
+        const gamesFiltered = gamesFormatted.filter(d => d["Home Team"] === teamName || d["Away Team"] === teamName);
+        const games = gamesFiltered.map(d => {
+            const r = sizeScale(d.totalWins);
+            return {
+                x: Math.random() * (width - 100) + 50,
+                y: Math.random() * height,
+                r: Math.abs(r),
+                color: teamsJson.find(t => t.teamName === d["Home Team"]).colorHome,
+                totalProfit: d.totalProfit,
+                id: (d.Date + d.Name).toString().replaceAll(" ", ""),
+                data: d
+            };
+        });
+        return games
+    },
+
     drawCirclesFromData(svg, data, setTooltipState, navigate) {
         // Bind the data to the SVG and create one 'circle' element per piece of data
         const circles = svg
@@ -61,7 +82,7 @@ const CircleFunctions = {
                 });
             })
             .on("click", d => {
-                navigate(`game/${d.currentTarget.__data__.id}`)
+                navigate(`/game/${d.currentTarget.__data__.id}`)
             });
 
         circles
@@ -127,7 +148,7 @@ const CircleFunctions = {
             .duration(2000)
             .attr('r', d => d.r)
             .attr('fill', d => d.color)
-            .attr('cx', (d, i) => (i % 25) * width / 25 + 100)
+            .attr('cx', (d, i) => (i % 25) * width / 25 + 25)
             .attr('cy', (d, i) => Math.floor(i / 25) * height / 25 + 200);
     },
     moveCirclesRandom(svg, data, width, height) {
@@ -135,12 +156,12 @@ const CircleFunctions = {
 
 
         circles
-          .transition()
-          .duration(2000)
-          .attr('cx', d => Math.random() * (width - 100) + 50)
-          .attr('cy', d => Math.random() * height)
-          .attr('r', d => d.r)
-          .attr('fill', d => d.color);
+            .transition()
+            .duration(2000)
+            .attr('cx', d => Math.random() * (width - 100) + 50)
+            .attr('cy', d => Math.random() * height)
+            .attr('r', d => d.r)
+            .attr('fill', d => d.color);
     },
     moveCirclesDownCenter(svg, width, height) {
         const circles = svg
@@ -163,7 +184,7 @@ const CircleFunctions = {
             .duration(3000)
             .attr('r', d => d.r)
             .attr('fill', d => d.color)
-            .attr('cx', (d, i) => (i % 25) * width / 25 + 100)
+            .attr('cx', (d, i) => (i % 25) * width / 25 + 50)
             .attr('cy', (d, i) => Math.floor(i / 25) * height / 25 + 200);
     },
     moveCirclesWinLoss(svg, width, height) {
@@ -171,45 +192,78 @@ const CircleFunctions = {
         let totalLoss = 0;
         const circles = svg
             .selectAll('circle');
-        
+
         //group circles 
         const winLossGroups = d3.group(circles.data(), d => d.data.totalProfit > 0 ? "win" : "loss");
 
         //Set x position for each group
-        winLossGroups.forEach((group,key) => {
-            const xPos = key === 'win' ? width/4 : width/2;
+        winLossGroups.forEach((group, key) => {
+            const xPos = key === 'win' ? width / 4 : width / 2;
             const yPos = key === 'win' ? 25 : 50;
             const xAdjust = key === 'win' ? 1.5 : 1;
             const yAdjust = key === 'win' ? 1.5 : 1;
 
             const newKey = key;
             group.forEach((circle, i) => {
-                circle.x = (i % 15) * width/4 / (15) + xPos + 100;
+                circle.x = (i % 15) * width / 4 / (15) + xPos + 100;
                 circle.y = Math.floor(i / 15) * height / 25 + 200;
-                newKey === 'win' ? totalProfit+=circle.data.totalProfit : totalLoss+=circle.data.totalProfit
+                newKey === 'win' ? totalProfit += circle.data.totalProfit : totalLoss += circle.data.totalProfit
             });
         });
-        
+
         //transition to new positions
         circles.transition()
             .duration(2000)
-            .attr('cx', d=>d.x)
-            .attr('cy', d=>d.y)
+            .attr('cx', d => d.x)
+            .attr('cy', d => d.y)
             .attr('fill', d => d.data.totalProfit > 0 ? "green" : "rgba(255, 0, 0, 0.644)");
-        
+
         const total = totalProfit - Math.abs(totalLoss)
         return [totalProfit, totalLoss, total];
-        
+
     },
-    moveByHomeTeam(svg, width, height){
+    moveCirclesWinLossTeamPage(svg, width, height) {
+        let totalProfit = 0;
+        let totalLoss = 0;
+        const circles = svg
+            .selectAll('circle');
+
+        //group circles 
+        const winLossGroups = d3.group(circles.data(), d => d.data.totalProfit > 0 ? "win" : "loss");
+
+        //Set x position for each group
+        winLossGroups.forEach((group, key) => {
+            const newX = key === 'win' ? 1/4 : 1/2;
+            const xPos = width * newX
+
+            const newKey = key;
+            group.forEach((circle, i) => {
+                circle.x = (i % 5) * width / (25) + xPos + 50
+                circle.y = Math.floor(i / 5) * height / 10 + 100;
+                newKey === 'win' ? totalProfit += circle.data.totalProfit : totalLoss += circle.data.totalProfit
+            });
+        });
+
+        //transition to new positions
+        circles.transition()
+            .duration(2000)
+            .attr('cx', d => d.x)
+            .attr('cy', d => d.y)
+            .attr('fill', d => d.data.totalProfit > 0 ? "green" : "rgba(255, 0, 0, 0.644)");
+
+        const total = totalProfit - Math.abs(totalLoss)
+        return [totalProfit, totalLoss, total];
+
+    },
+    moveByHomeTeam(svg, width, height) {
         const circles = svg
             .selectAll('circle');
         //group circles 
-        const alphaSortData = circles.data().sort(function(a, b) {
-            if(a.data["Home Team"].toLowerCase() < b.data["Home Team"].toLowerCase()) return -1;
-            if(a.data["Home Team"].toLowerCase() > b.data["Home Team"].toLowerCase()) return 1;
+        const alphaSortData = circles.data().sort(function (a, b) {
+            if (a.data["Home Team"].toLowerCase() < b.data["Home Team"].toLowerCase()) return -1;
+            if (a.data["Home Team"].toLowerCase() > b.data["Home Team"].toLowerCase()) return 1;
             return 0;
-           })
+        })
         const homeTeamGroups = d3.group(alphaSortData, d => d.data["Home Team"]);
 
         //set Y position for each group based on index
@@ -218,17 +272,47 @@ const CircleFunctions = {
             const yPos = i * 35 + 200;
             group.forEach((circle, i) => {
                 circle.y = yPos;
-                circle.x =  (i % 25) * width / 25 + 200
+                circle.x = (i % 25) * width / 25 + 200
             })
             i++;
         })
         circles.transition()
-        .duration(2000)
-        .attr('fill', d => d.color)
-        .attr('cy', d=>d.y)
-        .attr('cx', d=>d.x);
+            .duration(2000)
+            .attr('fill', d => d.color)
+            .attr('cy', d => d.y)
+            .attr('cx', d => d.x);
 
         return homeTeamGroups;
+    },
+    moveCirclesHomeAway(svg, width, height, teamName){
+        const circles = svg
+            .selectAll('circle');
+        const sortedCircles = circles.data().sort(function (a, b) {
+            const indexA = a.data["Home Team"] === teamName ? 1 : 5
+            const indexB = b.data["Home Team"] === teamName ? 1 : 5
+            return indexA - indexB
+        })
+        const teamGroups = d3.group(sortedCircles, d => d.data["Home Team"]===teamName ? "Home" : "Away");
+        //set Y position for each group based on index
+        let i = 0;
+        teamGroups.forEach((group, key, index) => {
+            const yPos = i * 35 + 200;
+            const newY = Math.floor(i / 5) * height / 25 + 200;
+            const newX = i === 0 ? 1/4 : 1/2;
+            const xPos = width * newX
+            group.forEach((circle, i) => {
+                circle.y = Math.floor(i / 5) * height / 10 + 100;
+                circle.x = (i % 5) * width / (25) + xPos + 50
+            })
+            i++;
+        })
+        circles.transition()
+            .duration(2000)
+            .attr('fill', d => d.color)
+            .attr('cy', d => d.y)
+            .attr('cx', d => d.x);
+
+        return teamGroups;
     },
     getForceX(width, height) {
         return d3.forceX(function (d) {
