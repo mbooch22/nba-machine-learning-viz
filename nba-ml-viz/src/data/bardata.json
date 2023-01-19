@@ -1,0 +1,1088 @@
+[
+    {
+        "date": "Tue Feb 09 2021",
+        "dataSet":  [
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "ATL",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "BOS",
+                "value": 91
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "BKN",
+                "value": -100
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "CHA",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "CHI",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "CLE",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "DAL",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "DEN",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "DET",
+                "value": -100
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "GSW",
+                "value": 91
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "HOU",
+                "value": -100
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "IND",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "LAC",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "LAL",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "MEM",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "MIA",
+                "value": 91
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "MIL",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "MIN",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "NOP",
+                "value": -100
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "NYK",
+                "value": 91
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "OKC",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "ORL",
+                "value": -100
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "PHI",
+                "value": -100
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "PHX",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "POR",
+                "value": -100
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "SAC",
+                "value": -100
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "SAS",
+                "value": 91
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "TOR",
+                "value": 0
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "UTA",
+                "value": 91
+            },
+            {
+                "date": "Tue Feb 09 2021",
+                "name": "WAS",
+                "value": 0
+            }
+        ]
+    },
+    {
+        "date": "Wed Feb 10 2021",
+        "dataSet": [
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "ATL",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "BOS",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "BKN",
+                "value": -9
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "CHA",
+                "value": -100
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "CHI",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "CLE",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "DAL",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "DEN",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "DET",
+                "value": -100
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "GSW",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "HOU",
+                "value": -100
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "IND",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "LAC",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "LAL",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "MEM",
+                "value": -100
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "MIA",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "MIL",
+                "value": -100
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "MIN",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "NOP",
+                "value": -9
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "NYK",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "OKC",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "ORL",
+                "value": -100
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "PHI",
+                "value": -100
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "PHX",
+                "value": -100
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "POR",
+                "value": -100
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "SAC",
+                "value": -100
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "SAS",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "TOR",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "UTA",
+                "value": 91
+            },
+            {
+                "date": "Wed Feb 10 2021",
+                "name": "WAS",
+                "value": 91
+            }
+        ]
+    },
+    {
+        "date": "Thu Feb 11 2021",
+        "dataSet": [
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "ATL",
+                "value": 91
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "BOS",
+                "value": -109
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "BKN",
+                "value": -9
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "CHA",
+                "value": -100
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "CHI",
+                "value": 91
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "CLE",
+                "value": 91
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "DAL",
+                "value": 91
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "DEN",
+                "value": 91
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "DET",
+                "value": -300
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "GSW",
+                "value": 82
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "HOU",
+                "value": -109
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "IND",
+                "value": -109
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "LAC",
+                "value": 91
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "LAL",
+                "value": 91
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "MEM",
+                "value": -100
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "MIA",
+                "value": 82
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "MIL",
+                "value": -100
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "MIN",
+                "value": 91
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "NOP",
+                "value": -9
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "NYK",
+                "value": 91
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "OKC",
+                "value": 91
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "ORL",
+                "value": -109
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "PHI",
+                "value": 82
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "PHX",
+                "value": -100
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "POR",
+                "value": 82
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "SAC",
+                "value": -100
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "SAS",
+                "value": 91
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "TOR",
+                "value": -109
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "UTA",
+                "value": 91
+            },
+            {
+                "date": "Thu Feb 11 2021",
+                "name": "WAS",
+                "value": 91
+            }
+        ]
+    },
+    {
+        "date": "Fri Feb 12 2021",
+        "dataSet": [
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "ATL",
+                "value": 273
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "BOS",
+                "value": -118
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "BKN",
+                "value": -9
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "CHA",
+                "value": 82
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "CHI",
+                "value": 82
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "CLE",
+                "value": 273
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "DAL",
+                "value": 82
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "DEN",
+                "value": 273
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "DET",
+                "value": -309
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "GSW",
+                "value": 82
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "HOU",
+                "value": -109
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "IND",
+                "value": -109
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "LAC",
+                "value": 82
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "LAL",
+                "value": -109
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "MEM",
+                "value": -300
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "MIA",
+                "value": 82
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "MIL",
+                "value": -109
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "MIN",
+                "value": 273
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "NOP",
+                "value": -18
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "NYK",
+                "value": 82
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "OKC",
+                "value": 273
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "ORL",
+                "value": -309
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "PHI",
+                "value": 73
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "PHX",
+                "value": -109
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "POR",
+                "value": 264
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "SAC",
+                "value": -300
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "SAS",
+                "value": 273
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "TOR",
+                "value": -109
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "UTA",
+                "value": 82
+            },
+            {
+                "date": "Fri Feb 12 2021",
+                "name": "WAS",
+                "value": 82
+            }
+        ]
+    },
+    {
+        "date": "Sat Feb 13 2021",
+        "dataSet": [
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "ATL",
+                "value": 264
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "BOS",
+                "value": 64
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "BKN",
+                "value": -18
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "CHA",
+                "value": 82
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "CHI",
+                "value": 82
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "CLE",
+                "value": 273
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "DAL",
+                "value": 82
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "DEN",
+                "value": 273
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "DET",
+                "value": -309
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "GSW",
+                "value": 73
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "HOU",
+                "value": -118
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "IND",
+                "value": -118
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "LAC",
+                "value": 82
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "LAL",
+                "value": -109
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "MEM",
+                "value": -300
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "MIA",
+                "value": 264
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "MIL",
+                "value": -109
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "MIN",
+                "value": 273
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "NOP",
+                "value": -18
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "NYK",
+                "value": 73
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "OKC",
+                "value": 273
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "ORL",
+                "value": -309
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "PHI",
+                "value": 73
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "PHX",
+                "value": -109
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "POR",
+                "value": 264
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "SAC",
+                "value": -300
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "SAS",
+                "value": 273
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "TOR",
+                "value": -109
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "UTA",
+                "value": 264
+            },
+            {
+                "date": "Sat Feb 13 2021",
+                "name": "WAS",
+                "value": 264
+            }
+        ]
+    },
+    {
+        "date": "Sun Feb 14 2021",
+        "dataSet": [
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "ATL",
+                "value": 264
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "BOS",
+                "value": 64
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "BKN",
+                "value": -18
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "CHA",
+                "value": 264
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "CHI",
+                "value": 82
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "CLE",
+                "value": 455
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "DAL",
+                "value": 264
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "DEN",
+                "value": 264
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "DET",
+                "value": -127
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "GSW",
+                "value": 73
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "HOU",
+                "value": -118
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "IND",
+                "value": -118
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "LAC",
+                "value": 264
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "LAL",
+                "value": -118
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "MEM",
+                "value": -309
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "MIA",
+                "value": 264
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "MIL",
+                "value": -118
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "MIN",
+                "value": 264
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "NOP",
+                "value": 164
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "NYK",
+                "value": 73
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "OKC",
+                "value": 264
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "ORL",
+                "value": -509
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "PHI",
+                "value": 73
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "PHX",
+                "value": -309
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "POR",
+                "value": 446
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "SAC",
+                "value": -309
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "SAS",
+                "value": 455
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "TOR",
+                "value": -118
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "UTA",
+                "value": 264
+            },
+            {
+                "date": "Sun Feb 14 2021",
+                "name": "WAS",
+                "value": 264
+            }
+        ]
+    },
+    {
+        "date": "Mon Feb 15 2021",
+        "dataSet": [
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "ATL",
+                "value": 255
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "BOS",
+                "value": 64
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "BKN",
+                "value": -218
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "CHA",
+                "value": 264
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "CHI",
+                "value": -118
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "CLE",
+                "value": 637
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "DAL",
+                "value": 264
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "DEN",
+                "value": 264
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "DET",
+                "value": -127
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "GSW",
+                "value": 255
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "HOU",
+                "value": -127
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "IND",
+                "value": -318
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "LAC",
+                "value": 446
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "LAL",
+                "value": -118
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "MEM",
+                "value": -309
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "MIA",
+                "value": 446
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "MIL",
+                "value": -118
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "MIN",
+                "value": 264
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "NOP",
+                "value": 164
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "NYK",
+                "value": 64
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "OKC",
+                "value": 264
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "ORL",
+                "value": -509
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "PHI",
+                "value": 64
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "PHX",
+                "value": -309
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "POR",
+                "value": 446
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "SAC",
+                "value": -509
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "SAS",
+                "value": 455
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "TOR",
+                "value": -118
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "UTA",
+                "value": 255
+            },
+            {
+                "date": "Mon Feb 15 2021",
+                "name": "WAS",
+                "value": 255
+            }
+        ]
+    }
+    
+]

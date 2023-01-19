@@ -13,7 +13,7 @@ import Profit from '../CommonHome/Profit';
 import HomeAwayText from './HomeAwayText';
 import TeamBarChart from './TeamBarChat';
 import BarChartFunctions from '../../model/BarChartFunctions';
-
+import ProfitOverTime from '../Animations/ProfitOverTime';
 const StyledTeamPage = styled.div`
     .title-logo {
       span {
@@ -94,6 +94,7 @@ const TeamPage = () => {
         <TeamBarChart teamName={teamJson.teamName} width={width} height={height} barChartRef={barChartRef} alignment={alignment}/>
       </Box>
       <Box display="flex" paddingTop={10} justifyContent="center">
+        <ProfitOverTime data={DataFunctions.getProfitByDatePerTeam(teamJson.teamName)} width={width} height={height}/>
       </Box>
     </StyledTeamPage>
   );

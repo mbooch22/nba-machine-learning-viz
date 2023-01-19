@@ -4,6 +4,10 @@ import Circles from './CirclesHome/Circles';
 import TeamsSection from './TeamsSections';
 import Title from './Title';
 import MoreInfoSection from './MoreInfo/MoreInfoSection';
+import ProfitOverTime from './Animations/ProfitOverTime';
+import DataFunctions from '../model/DataFunctions';
+import ProfitByTeam from './Animations/ProfitByTeam';
+import BarChartSVG from './Animations/BarChartRace/BarChartSVG';
 
 const StyledHome = styled.div`
   background-color: var(--primary-color);
@@ -29,6 +33,11 @@ function Home() {
       <StyledHome >
         <MoreInfoSection data={data} setData={setData} scrollSection={scrollSection} setScrollSection={setScrollSection}/>
 
+      </StyledHome>
+      <StyledHome >
+        <ProfitOverTime data={DataFunctions.getProfitByDate()} width={width} height={height}/>
+        <ProfitByTeam data={DataFunctions.getProfitByDate()}  width={width} height={height}/>
+        {/* <BarChartSVG /> */}
       </StyledHome>
     </>
   );

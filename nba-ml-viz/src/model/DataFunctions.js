@@ -2,9 +2,10 @@ import _ from 'lodash';
 import * as d3 from "d3";
 
 import gamesJson from '../data/games.json';
+import teamsJson from '../data/teams.json';
 
 const DataFunctions = {
-    getWinsLosses (games, moneyLine = true){
+    getWinsLosses(games, moneyLine = true) {
         let wins = 0;
         let losses = 0;
         for (let i = 0; i < games.length; i++) {
@@ -44,7 +45,7 @@ const DataFunctions = {
                 if (games[i]["BET WIN"] === "W") {
                     wins++;
                     let oddsPercent = parseFloat(games[i]["Vegas MoneyLine Odds"].split("%")[0]);
-                    if (games[i]["Winner"] === "A"){
+                    if (games[i]["Winner"] === "A") {
                         oddsPercent = 100 - oddsPercent;
                     }
                     let moneyWon = this.oddsConverter(oddsPercent);
@@ -55,14 +56,14 @@ const DataFunctions = {
                     profitLosses++;
                 }
             }
-    
+
             games[i]["Date"] = games[i]["Date"].substring(0, 10);
-            games[i].totalProfit = Math.round((profitWins * 91 ) - (profitLosses * 100));
+            games[i].totalProfit = Math.round((profitWins * 91) - (profitLosses * 100));
             games[i].winsOnly = wins;
             games[i].lossesOnly = losses;
-    
+
             games[i].totalWins = wins - losses;
-    
+
         }
         return games;
     },
@@ -84,20 +85,92 @@ const DataFunctions = {
     },
 
     getTotalWins(data) {
-        
-        const wins =  _.sumBy(data, function(d) { return d.data.winsOnly; });
-        const losses = _.sumBy(data, function(d) { return d.data.lossesOnly; });
+
+        const wins = _.sumBy(data, function (d) { return d.data.winsOnly; });
+        const losses = _.sumBy(data, function (d) { return d.data.lossesOnly; });
 
         return [wins, losses];
     },
 
     getTotalProfit(data) {
-        const profit =  _.sumBy(data, function(d) { return d.data.totalProfit; });
+        const profit = _.sumBy(data, function (d) { return d.data.totalProfit; });
         return profit;
     },
-    
-    getCircleObjectProfit(data){
+
+    getCircleObjectProfit(data) {
         return data.data.totalProfit;
+    },
+    getDatesForSlider() {
+        const games =[...new Set(gamesJson.map(item => new Date(item.Date).toDateString()))]
+        const dates = games.map((d, i) => {
+            return {
+                'date': d,
+                'i': i
+            }
+
+        });
+        return _.orderBy(dates, i => new Date(i.date), 'asc');
+    }, 
+    getDatesForSliderPerTeam(teamName) {
+        const games =[...new Set(gamesJson.filter(game => game["Home Team"] === teamName || game["Away Team"] === teamName).map(item => new Date(item.Date).toDateString()))]
+        const dates = games.map((d, i) => {
+            return {
+                'date': d,
+                'i': i
+            }
+
+        });
+        return _.orderBy(dates, i => new Date(i.date), 'asc');
+    }, 
+    getProfitByDatePerTeam(teamName){
+        const games = this.getWinsLosses(gamesJson.filter(game => game["Home Team"] === teamName || game["Away Team"] === teamName));
+        const uniqueDates = this.getDatesForSliderPerTeam(teamName)
+        const profitByDate = uniqueDates.map((d, i) => {
+            return {
+                'date': d.date,
+                'i': i,
+                'totalProfit': this.getGamesProfitByDate(games, d.date)
+            }
+        })
+        return profitByDate;
+    },
+
+    getProfitByDate() {
+        const games = this.getWinsLosses(gamesJson);
+        const uniqueDates = this.getDatesForSlider()
+        const profitByDate = uniqueDates.map((d, i) => {
+            return {
+                'date': d.date,
+                'i': i,
+                'totalProfit': this.getGamesProfitByDate(games, d.date)
+            }
+        })
+        return profitByDate;
+    },
+    getGamesProfitByDate(games, date) {
+        let totalProfit = 0
+        totalProfit = _.sumBy(games, function(d) { if(new Date(d.Date).toDateString() === date) return d.totalProfit; });
+        return totalProfit
+    },
+    getTeamProfitByDates() {
+        const teamProfitByDate = {}
+        const games = this.getWinsLosses(gamesJson);
+        const uniqueDates = this.getDatesForSlider();
+        uniqueDates.forEach((d,i) => {
+            teamProfitByDate[i] = this.getTeamProfitforDate(games, d.date, teamProfitByDate[i-1] ? teamProfitByDate[i-1] : null, i-1);
+        })
+        return teamProfitByDate;
+    },
+    getTeamProfitforDate(games, date, teamProfit, index){
+        const teams = []
+        let profit = 0;
+        const dateGames = games.filter(d => new Date(d.Date).toDateString() === date)
+        teamsJson.forEach((team, i) => {
+            let currProfit = teamProfit ? teamProfit.find(d => d.team === team.abbreviation).totalProfit : 0
+            profit = _.sumBy(dateGames.filter(d => d["Home Team"] === team.teamName || d["Away Team"] === team.teamName), 'totalProfit')
+            teams.push({ date: date, team: team.abbreviation, totalProfit : profit ? profit+currProfit : currProfit})
+        })
+        return teams;
     }
 }
 
