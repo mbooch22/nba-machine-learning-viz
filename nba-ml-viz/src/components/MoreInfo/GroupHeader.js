@@ -1,23 +1,22 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import * as NBAIcons from 'react-nba-logos';
 import teamsJson from '../../data/teams.json';
-import * as d3 from 'd3';
 import { Link } from 'react-router-dom';
 
 const GroupContainer = styled.div`
 
 `
 
-const GroupHeader = ({ teamName, games }) => {
-    const xPos = games[0].x - 75;
-    const yPos = games[0].y - 25;
+const GroupHeader = ({ teamName, games, size }) => {
+    const xPos = games[0].x - size[1];
+    const yPos = games[0].y - size[2];
     let homeTeamLogo = teamsJson.map((team, i) => {
         if (team.teamName === teamName) {
             const TeamIcon = NBAIcons[team.abbreviation];
             return (
                 <Link key={team.abbreviation} to={`team/${team.abbreviation}`}>
-                    <TeamIcon size={50} ></TeamIcon>
+                    <TeamIcon size={size[0]} ></TeamIcon>
                 </Link>
             )
         } else return (null)

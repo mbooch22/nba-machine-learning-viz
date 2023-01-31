@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { cards } from '../data/cards'
 import Card from './CommonHome/Card';
 import Hero from './CommonHome/Hero';
-
+import Box from '@material-ui/core/Box';
 const StyledTitle = styled.div`
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translate(-50%, 0);
     
@@ -46,24 +46,26 @@ const StyledTitle = styled.div`
 `;
 
 const Title = ({ title }) => {
-    const titleCard = cards.filter(card => card.name === 'Title');
-    return (
-        <StyledTitle>
-            <Hero>
-                <div className="row">
-                    {titleCard.map((card, i) => (
-                        <div key='titleCard' className="column">
-                            <Card>
-                                <div className="card-title">{card.title}</div>
-                                <div className="card-body">{card.description}</div>
-                                {/* <Image ratio={card.imageRatio} src={card.image} /> */}
-                            </Card>
-                        </div>
-                    ))}
-                </div>
-            </Hero>
-        </StyledTitle>
-    )
+  const titleCard = cards.filter(card => card.name === 'Title');
+  return (
+    <StyledTitle>
+      <Box display="flex" justifyContent="center">
+        <Hero>
+          <div className="row">
+            {titleCard.map((card, i) => (
+              <div key='titleCard' className="column">
+                <Card>
+                  <div className="card-title">{card.title}</div>
+                  <div className="card-body">{card.description}</div>
+                  {/* <Image ratio={card.imageRatio} src={card.image} /> */}
+                </Card>
+              </div>
+            ))}
+          </div>
+        </Hero>
+      </Box>
+    </StyledTitle>
+  )
 };
 
 export default Title;

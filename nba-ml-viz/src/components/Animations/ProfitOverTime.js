@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
 import * as d3 from 'd3';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -7,7 +6,6 @@ import Slider from '@material-ui/core/Slider';
 import Grid from '@material-ui/core/Grid';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import PauseIcon from '@material-ui/icons/Pause';
-import DataFunctions from '../../model/DataFunctions';
 import { Button } from '@material-ui/core';
 import _ from 'lodash';
 import CurrencyFormat from 'react-currency-format';

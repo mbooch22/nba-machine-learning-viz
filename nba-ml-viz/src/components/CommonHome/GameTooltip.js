@@ -1,7 +1,6 @@
 import React from "react";
 import * as NBAIcons from 'react-nba-logos';
 import teamsJson from '../../data/teams.json';
-import Home from "../Home";
 
 const GameTooltip = (props) => {
     const { left, top, fields, data } = props;

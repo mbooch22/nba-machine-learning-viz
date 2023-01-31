@@ -1,14 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import * as NBAIcons from 'react-nba-logos';
-import teamsJson from '../../data/teams.json';
-import * as d3 from 'd3';
+
 
 const ProfitContainer = styled.div`
 
 `
 
-const Profit = ({ i, profit, width, height }) => {
+const Profit = ({ i, profit, width, height, adjust }) => {
     let profitFormatted = "";
     let xAdjust = 0;
     switch(i){
@@ -28,7 +26,7 @@ const Profit = ({ i, profit, width, height }) => {
             break;
     }
     return (
-        <text className='moreinfo-profit' x={width / 2 + xAdjust} y={height/8}>
+        <text className='moreinfo-profit' x={width / adjust[0] + xAdjust} y={height/adjust[1]}>
             {profitFormatted}
         </text>
 

@@ -1,8 +1,5 @@
-import _ from 'lodash';
 import * as d3 from "d3";
-import * as NBAIcons from 'react-nba-logos';
 // load the data
-import teamsJson from '../data/teams.json';
 import gamesJson from '../data/games.json';
 import DataFunctions from './DataFunctions';
 
@@ -56,7 +53,7 @@ const BarChartFunctions = {
             .attr('y', d => yScale(Math.max(0, yValue(d))))
             .attr('height', d => Math.abs(yScale(yValue(d)) - yScale(0)));
 
-        const rects = svg.selectAll('rect')
+        svg.selectAll('rect')
             .on("mouseover", d => {
                 setTooltipState({
                     top: (d.pageY - 10) + "px",
@@ -108,7 +105,6 @@ const BarChartFunctions = {
 
         const teamGroups = d3.group(data, d => d.data["Home Team"] === teamName ? "Home" : "Away");
         // //set Y position for each group based on index
-        let i = 0;
         teamGroups.forEach((group, key, index) => {
             let g = svg.append('g')
                 .attr('transform', `scale(1, 1), translate(${margin.left}, ${margin.top})`)
@@ -129,12 +125,11 @@ const BarChartFunctions = {
                     .attr('transform', `translate(${key === "Home" ? innerWidth/2 +30 : 0}, 0)`);
                 g.append('g').call(d3.axisBottom(key === "Home" ? xScale2 : xScale))
                     .attr('transform', `translate(0, ${innerHeight})`);
-            i++;
         })
 
 
 
-        const rects = svg.selectAll('rect')
+        svg.selectAll('rect')
             .on("mouseover", d => {
                 setTooltipState({
                     top: (d.pageY - 10) + "px",
@@ -189,7 +184,6 @@ const BarChartFunctions = {
 
         const teamGroups = d3.group(data, d => d.data.totalProfit > 0 ? "win" : "loss");
         // //set Y position for each group based on index
-        let i = 0;
         teamGroups.forEach((group, key, index) => {
             let g = svg.append('g')
                 .attr('transform', `scale(1, 1), translate(${margin.left}, ${margin.top})`)
@@ -210,12 +204,11 @@ const BarChartFunctions = {
                     .attr('transform', `translate(${key === "win" ? innerWidth/2 +30 : 0}, 0)`);
                 g.append('g').call(d3.axisBottom(key === "win" ? xScale2 : xScale))
                     .attr('transform', `translate(0, ${innerHeight})`);
-            i++;
         })
 
 
 
-        const rects = svg.selectAll('rect')
+        svg.selectAll('rect')
             .on("mouseover", d => {
                 setTooltipState({
                     top: (d.pageY - 10) + "px",

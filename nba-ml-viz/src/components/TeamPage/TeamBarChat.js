@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import { useNavigate } from "react-router-dom";
 import BarChartFunctions from '../../model/BarChartFunctions';
@@ -24,7 +24,7 @@ const TeamBarChart = ({ teamName, barChartRef, width, height, alignment }) => {
         switch (alignment) {
             case 'left':
               //Move Rects
-              const rectGroups = BarChartFunctions.moveRectsHomeAway(barRef, width, height, teamName, data, setTooltipState, navigate);
+              BarChartFunctions.moveRectsHomeAway(barRef, width, height, teamName, data, setTooltipState, navigate);
       
               break;
             case 'center':

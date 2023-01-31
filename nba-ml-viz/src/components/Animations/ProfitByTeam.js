@@ -9,31 +9,44 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import PauseIcon from '@material-ui/icons/Pause';
 import DataFunctions from '../../model/DataFunctions';
 import { Button } from '@material-ui/core';
-import _ from 'lodash';
-import CurrencyFormat from 'react-currency-format';
-import DayTooltip from '../CommonHome/DayTooltip';
+import TeamTooltip from '../CommonHome/TeamTooltip';
 import { useNavigate } from "react-router-dom";
-import ex_data from '../../data/example_data.json'
 import teamsJson from '../../data/teams.json'
+
+const StyledTeamProfit = styled.div`
+    .x-axis .tick text {
+        color: #d3d3d3;
+    }
+    .columns .column-container .column-title {
+        text-anchor: end;
+        fill: white;
+        dominant-baseline: middle;
+        font-size: 14px;
+    }
+    .columns .column-container .column-value {
+        dominant-baseline: middle;
+        font-size: 14px;
+        fill: white;
+    }
+`;
 
 const margin = ({ top: 50, right: 50, bottom: 50, left: 50 })
 // const margin = ({ top: 16, right: 6, bottom: 6, left: 0 })
 const delay = 500;
-
 const duration = 250;
 
-
 const ProfitByTeam = ({ data, width, height }) => {
+    const navigate = useNavigate();
     const new_data = DataFunctions.getTeamProfitByDates()
-    const test_data = ex_data;
     const chartRef = useRef(null);
     const [sliderValue, setSliderValue] = useState(0);
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
     const [play, setPlay] = useState(false)
+    const [tooltipState, setTooltipState] = useState({ top: 0, left: 0, fields: [], data: {} })
 
     //chart functions
-    
+
     const xAxisScale = d3.scaleLinear().range([0, innerWidth - margin.right]);
     const yAxisScale = d3
         .scaleBand()
@@ -57,8 +70,9 @@ const ProfitByTeam = ({ data, width, height }) => {
             .ease(d3.easeLinear)
             .call(
                 d3
-                    .axisTop(xAxisScale)
+                    .axisBottom(xAxisScale)
                     .ticks(5)
+                    // .tickValues(d3.ticks(...d3.extent(curr_day_data, d => Math.abs(d.totalProfit)), innerWidth / 80))
                     .tickSize(-innerHeight)
             );
 
@@ -85,7 +99,26 @@ const ProfitByTeam = ({ data, width, height }) => {
             .append("rect")
             .attr("class", "column-rect")
             .attr("width", 0)
-            .attr("height", yAxisScale.step() * (1 - 0.4));
+            .attr("height", yAxisScale.step() * (1 - 0.4))
+            .on("click", d => {
+                navigate(`/team/${d.currentTarget.__data__.team}`)
+            })
+            .on("mouseover", d => {
+                setTooltipState({
+                    top: (d.pageY - 10) + "px",
+                    left: (d.pageX + 10) + "px",
+                    fields: [
+                        `Title: ${d.currentTarget.__data__.date}`,
+                    ],
+                    data: d.currentTarget.__data__
+                });
+            })
+            .on("mouseout", () => {
+                setTooltipState({
+                    fields: [],
+                    data: {}
+                });
+            });
 
         barGroupsEnter
             .append("text")
@@ -130,7 +163,7 @@ const ProfitByTeam = ({ data, width, height }) => {
             .transition()
             .duration(2000)
             .ease(d3.easeLinear)
-            .attr("x", ({ totalProfit }) => xAxisScale(Math.abs(totalProfit)) + margin.right)
+            .attr("x", ({ totalProfit }) => xAxisScale(Math.abs(totalProfit)) + 10)
             .tween("text", function ({ totalProfit }) {
                 const interpolateStartValue =
                     2000 === 3500
@@ -148,9 +181,9 @@ const ProfitByTeam = ({ data, width, height }) => {
         const bodyExit = barGroups.exit();
 
         bodyExit
-        .transition()
-        .duration(2000)
-        .ease(d3.easeLinear)
+            .transition()
+            .duration(2000)
+            .ease(d3.easeLinear)
             .attr("transform", `translate(0,${innerHeight})`)
             .on("end", function () {
                 d3.select(this).attr("fill", "none");
@@ -259,12 +292,6 @@ const ProfitByTeam = ({ data, width, height }) => {
         const svg = d3.select(chartRef.current);
         // const svg = d3.create("svg")
         // .attr("viewBox", [0, 0, width, height]);
-
-
-
-        const group = svg.append("g");
-
-        let rect = group.selectAll("rect");
         drawRects(svg, sliderValue);
 
 
@@ -339,54 +366,60 @@ const ProfitByTeam = ({ data, width, height }) => {
 
 
     return (
-        <Box paddingLeft={10} paddingRight={10}>
-            <Box display="flex" paddingTop={10} justifyContent="center">
-                <Typography id="non-linear-slider" variant="h4" gutterBottom>
-                    Profit By Team
-                </Typography>
-            </Box>
-            <Box display="flex" justifyContent="center">
-                <Typography id="non-linear-slider" variant="h4" gutterBottom>
-                </Typography>
-            </Box>
-            <Grid container spacing={2} alignItems="center">
-                <Grid item>
-                    <Button onClick={handlePlayChange}>
-                        {play ? (
-                            <PauseIcon />
-                        ) : (<PlayArrowIcon />)}
-
-                    </Button>
-                </Grid>
-                <Grid item xs>
-                    <Slider
-                        //defaultValue={data[0].i}
-                        aria-labelledby="input-slider"
-                        valueLabelDisplay="off"
-                        //step={1}
-                        onChange={handleSliderChange}
-                        // marks={true}
-                        min={0}
-                        max={data.length - 1}
-                        value={typeof sliderValue === 'number' ? sliderValue : 0}
-
-                    />
-                </Grid>
-
-                <Grid item>
-                    <Typography variant="h4" gutterBottom>
-                        <span>{data[sliderValue].date}</span>
+        <StyledTeamProfit>
+            <Box paddingLeft={10} paddingRight={10}>
+                <Box display="flex" paddingTop={10} justifyContent="center">
+                    <Typography id="non-linear-slider" variant="h4" gutterBottom>
+                        Profit By Team
                     </Typography>
+                </Box>
+                <Box display="flex" justifyContent="center">
+                    <Typography id="non-linear-slider" variant="h4" gutterBottom>
+                    </Typography>
+                </Box>
+                <Grid container spacing={2} alignItems="center">
+                    <Grid item>
+                        <Button onClick={handlePlayChange}>
+                            {play ? (
+                                <PauseIcon />
+                            ) : (<PlayArrowIcon />)}
+
+                        </Button>
+                    </Grid>
+                    <Grid item xs>
+                        <Slider
+                            //defaultValue={data[0].i}
+                            aria-labelledby="input-slider"
+                            valueLabelDisplay="off"
+                            //step={1}
+                            onChange={handleSliderChange}
+                            // marks={true}
+                            min={0}
+                            max={data.length - 1}
+                            value={typeof sliderValue === 'number' ? sliderValue : 0}
+
+                        />
+                    </Grid>
+
+                    <Grid item>
+                        <Typography variant="h4" gutterBottom>
+                            <span>{data[sliderValue].date}</span>
+                        </Typography>
+                    </Grid>
                 </Grid>
-            </Grid>
 
-            <svg ref={chartRef} >
-                <g className="x-axis"></g>
-                <g className="y-axis"></g>
-                <g className="columns"></g>
-            </svg>
-
-        </Box>
+                <svg ref={chartRef} >
+                    <g className="x-axis"></g>
+                    <g className="y-axis"></g>
+                    <g className="columns"></g>
+                </svg>
+                <TeamTooltip
+                    left={tooltipState.left}
+                    top={tooltipState.top}
+                    fields={tooltipState.fields}
+                    data={tooltipState.data}/>
+            </Box>
+        </StyledTeamProfit>
     )
 }
 

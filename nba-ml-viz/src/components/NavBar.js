@@ -1,37 +1,60 @@
-import * as React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom'
+import { Typography } from '@material-ui/core';
+import { useNavigate } from "react-router-dom";
+import Popover from 'react-awesome-popover';
+import TeamsSection from './TeamsSections';
+import styled from 'styled-components';
 
-const pages = [{Text: 'Home', link: "/"}, {Text: 'About', link: "/about"}];
 
+const pages = [{ Text: 'Home', link: "/" }, { Text: 'About', link: "/about" }];
+
+const StyledPopover = styled.div`
+    width: ${window.innerWidth/2}px;
+`;
 
 function ResponsiveAppBar() {
+  const navigate = useNavigate();
+  const clickMeButtonRef = useRef(null);
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const handleClick = (link) => {
+    navigate(link)
+  };
 
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+    <AppBar position="sticky">
+      <Container>
+        <Toolbar >
+          <Box display="flex" justifyContent="center">
             {pages.map((page) => (
-              <Link to={page.link} key={page.Text}>
-                <Button
+              <Button color="inherit" onClick={() => handleClick(page.link)}
                 key={page.Text}
-                sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page.Text}
-                
-
-                </Button>
-              </Link>
+                <Typography >
+                  {page.Text}
+                </Typography>
+              </Button>
             ))}
           </Box>
+          <Box display="flex" justifyContent="center">
+            <Popover placement={"bottom-start"} >
+              <Button ref={clickMeButtonRef} color="inherit" onClick={() => setIsPopoverOpen(!isPopoverOpen)}>
+                <Typography >Teams</Typography>
+              </Button>
+              <StyledPopover>
+                <Box display="flex" justifyContent="center">
+                  <TeamsSection />
+                </Box>
+              </StyledPopover>
+            </Popover>
 
 
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

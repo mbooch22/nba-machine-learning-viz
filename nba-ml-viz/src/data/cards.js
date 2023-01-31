@@ -1,7 +1,7 @@
 export const cards = [
   {
     name: "Title",
-    title: "An Interactive Visualization of a Machine Learning Model's Predictions of NBA Games",
+    title: "🏀An Interactive Visualization of a Machine Learning Model's Predictions of NBA Games🏀",
     description:
       "By Matt Bellucci",
     image: "https://6jlvz1j5q3.csb.app/undraw_collection.svg",

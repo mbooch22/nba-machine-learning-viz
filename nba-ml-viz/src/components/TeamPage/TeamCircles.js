@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import * as d3 from 'd3';
-import Buttons from '../CommonHome/Button';
 import CircleFunctions from '../../model/CircleFunctions';
 import GameTooltip from '../CommonHome/GameTooltip';
 

@@ -12,7 +12,6 @@ import CircleFunctions from '../../model/CircleFunctions';
 import Profit from '../CommonHome/Profit';
 import HomeAwayText from './HomeAwayText';
 import TeamBarChart from './TeamBarChat';
-import BarChartFunctions from '../../model/BarChartFunctions';
 import ProfitOverTime from '../Animations/ProfitOverTime';
 const StyledTeamPage = styled.div`
     .title-logo {
@@ -31,7 +30,6 @@ const TeamPage = () => {
   const [alignment, setAlignment] = useState('center');
   const TeamIcon = NBAIcons[teamAbr];
   const teamJson = teamsJson.find(team => team.abbreviation === teamAbr);
-  const teamGames = DataFunctions
   const circlesRef = useRef(null);
   const barChartRef = useRef(null);
   let width = window.innerWidth - 100;
@@ -64,7 +62,7 @@ const TeamPage = () => {
       case 'right':
         const profit = CircleFunctions.moveCirclesWinLossTeamPage(svg, width, height);
         setGroupComponents([profit.map((d, i) => (
-          <Profit key={i} i={i} profit={d} width={width} height={height} />
+          <Profit key={i} i={i} profit={d} width={width} height={height} adjust={[2,8]} />
         ))])
         break;
       default:

@@ -11,6 +11,7 @@ import GameTooltip from '../CommonHome/GameTooltip';
 import AutoCarousel from './AutoCarousel';
 import GroupHeader from './GroupHeader';
 import Profit from '../CommonHome/Profit';
+import Box from '@material-ui/core/Box';
 
 const StyledMoreInfo = styled.div`
     padding-top: 50%;
@@ -49,15 +50,15 @@ const StyledMoreInfo = styled.div`
 `;
 
 const MoreInfoSection = (props) => {
-    const { data, setData, scrollSection, setScrollSection } = props;
+    const { data, scrollSection, setScrollSection, settings } = props;
     const navigate = useNavigate();
     const [tooltipState, setTooltipState] = useState({ top: 0, left: 0, fields: [], data: {} })
     const [groupComponents, setGroupComponents] = useState([]);
     const moreInfoCards = cards.filter(card => card.name.includes('info'));
     const moreInfoRef = useRef(null);
     const circlesRef = useRef(null);
-    let width = window.innerWidth - 100;
-    let height = window.outerHeight;
+    let width = settings.width;
+    let height = settings.height;
 
     useEffect(() => {
         // if (document.body.clientWidth !== 0) width = document.body.clientWidth - 100;
@@ -101,13 +102,13 @@ const MoreInfoSection = (props) => {
 
 
                 //Move Other Circles
-                CircleFunctions.moveCirclesDownCenter(svg1, width, height);
+                CircleFunctions.moveCirclesDownCenter(svg1, width, height, settings);
 
 
                 // Use D3's transition function to smoothly animate the circles to their new positions
                 // Sort the circles by size and group them in a grid
                 // Use the circle elements to draw the circles on the screen
-                CircleFunctions.drawCirclesFromDataSorted(svg, data, setTooltipState, navigate, width, height);
+                CircleFunctions.drawCirclesFromDataSorted(svg, data, setTooltipState, navigate, width, height, settings);
 
             }
         }
@@ -131,19 +132,19 @@ const MoreInfoSection = (props) => {
         const svg = d3.select(circlesRef.current);
         switch (i_mapping[index]) {
             case "sortProfit":
-                CircleFunctions.moveCirclesSorted(svg, width, height);
+                CircleFunctions.moveCirclesSorted(svg, width, height, settings);
                 setGroupComponents([])
                 break
             case "sortByHomeTeam":
-                const groups = CircleFunctions.moveByHomeTeam(svg, width, height);
+                const groups = CircleFunctions.moveByHomeTeam(svg, width, height, settings);
                 setGroupComponents(Array.from(groups).map(group => (
-                    <GroupHeader key={group[0]} teamName={group[0]} games={group[1]} />
+                    <GroupHeader key={group[0]} teamName={group[0]} games={group[1]} size={settings.iconSize}/>
                 )))
                 break
             case "sortByWins":
-                const profit = CircleFunctions.moveCirclesWinLoss(svg, width, height);
+                const profit = CircleFunctions.moveCirclesWinLoss(svg, width, height, settings);
                 setGroupComponents([profit.map((d, i) => (
-                    <Profit key={i} i={i} profit={d} width={width} height={height} />
+                    <Profit key={i} i={i} profit={d} width={width} height={height} adjust={settings.profitAdjust}/>
                 ))])
                 break
             default:
@@ -154,24 +155,30 @@ const MoreInfoSection = (props) => {
 
     return (
         <StyledMoreInfo>
-            <Hero>
-                <div className="row">
-                    {moreInfoCards.map((card, i) => (
-                        <div key={card.name} className="column">
-                            <Card>
-                                <div className="card-title">{card.title}</div>
-                                <div className="card-body">{parse(card.description)}</div>
-                                {/* <Image ratio={card.imageRatio} src={card.image} /> */}
-                            </Card>
-                        </div>
-                    ))}
-                </div>
-            </Hero>
-            <div ref={moreInfoRef}></div>
-            <AutoCarousel scrollSection={scrollSection} onChangeFilter={onChangeFilter} />
-            <svg id="svg2" ref={circlesRef}>
-                {groupComponents}
-            </svg>
+            <Box display="flex" paddingTop={10} justifyContent="center">
+                <Hero>
+                    <div className="row">
+                        {moreInfoCards.map((card, i) => (
+                            <div key={card.name} className="column">
+                                <Card>
+                                    <div className="card-title">{card.title}</div>
+                                    <div className="card-body">{parse(card.description)}</div>
+                                    {/* <Image ratio={card.imageRatio} src={card.image} /> */}
+                                </Card>
+                            </div>
+                        ))}
+                    </div>
+                </Hero>
+                <div ref={moreInfoRef}></div>
+            </Box>
+            <Box display="flex" paddingTop={1} justifyContent="center">
+                <AutoCarousel scrollSection={scrollSection} onChangeFilter={onChangeFilter} />
+            </Box>
+            <Box display="flex" paddingTop={1} justifyContent="center">
+                <svg id="svg2" ref={circlesRef}>
+                    {groupComponents}
+                </svg>
+            </Box>
             <GameTooltip
                 left={tooltipState.left}
                 top={tooltipState.top}
