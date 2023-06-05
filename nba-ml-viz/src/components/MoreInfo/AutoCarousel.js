@@ -2,22 +2,23 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Slider from "react-slick";
 import { Card, CardContent } from '@material-ui/core';
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     root: {
-      maxWidth: 345,
+        maxWidth: 345,
     },
     media: {
-      height: 140,
+        height: 140,
     },
     card: {
-        paddingLeft: 10, 
+        paddingLeft: 10,
         paddingRight: 10,
         width: "80%",
-        backgroundColor: "rgba(255, 255, 255, 0.5)",    
+        backgroundColor: "rgba(255, 255, 255, 0.5)",
     }
-  });
+});
 
 const SlideContainer = styled.div`
   padding-top: 40px;
@@ -35,7 +36,7 @@ const StyledCard = styled.div`
     width: 80%;
 `
 
-const AdvancedCarousel = ({onChangeFilter, scrollSection}) => {
+const AdvancedCarousel = ({ onChangeFilter, scrollSection }) => {
     const classes = useStyles();
     let sliderRef = useRef(null);
     const settings = {
@@ -61,25 +62,31 @@ const AdvancedCarousel = ({onChangeFilter, scrollSection}) => {
         <SlideContainer>
             <Slider ref={slider => (sliderRef = slider)} {...settings}>
                 <StyledCard>
-                    <Card  className={classes.card}>
-                        <CardContent>
-                            Sort Smallest profit to Largest
-                        </CardContent>
-                    </Card>
+                    <BrowserView>
+                        <Card className={classes.card}>
+                            <CardContent>
+                                Sort Smallest profit to Largest
+                            </CardContent>
+                        </Card>
+                    </BrowserView>
                 </StyledCard>
                 <StyledCard>
-                    <Card  className={classes.card} >
-                        <CardContent>
-                            Sort By Home Team
-                        </CardContent>
-                    </Card>
+                    <BrowserView>
+                        <Card className={classes.card} >
+                            <CardContent>
+                                Sort By Home Team
+                            </CardContent>
+                        </Card>
+                    </BrowserView>
                 </StyledCard>
                 <StyledCard>
-                    <Card  className={classes.card}>
-                        <CardContent>
-                            Sort Between Wins and Losses
-                        </CardContent>
-                    </Card>
+                    <BrowserView>
+                        <Card className={classes.card}>
+                            <CardContent>
+                                Sort Between Wins and Losses
+                            </CardContent>
+                        </Card>
+                    </BrowserView>
                 </StyledCard>
             </Slider>
         </SlideContainer>

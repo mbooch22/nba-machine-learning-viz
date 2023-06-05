@@ -13,6 +13,7 @@ import GroupHeader from './GroupHeader';
 import Profit from '../CommonHome/Profit';
 import Box from '@material-ui/core/Box';
 
+
 const StyledMoreInfo = styled.div`
     padding-top: 50%;
     .row {
@@ -83,9 +84,6 @@ const MoreInfoSection = (props) => {
                 //TODO - add check to see if already sorted
                 setScrollSection("MOREINFO");
 
-                // The bottom of the element is visible, show the alert
-                console.log('You have scrolled to the bottom of the section!');
-
                 const svg1 = d3.select('#svg1');
                 const svg2 = d3.select('#svg2');
 
@@ -138,13 +136,13 @@ const MoreInfoSection = (props) => {
             case "sortByHomeTeam":
                 const groups = CircleFunctions.moveByHomeTeam(svg, width, height, settings);
                 setGroupComponents(Array.from(groups).map(group => (
-                    <GroupHeader key={group[0]} teamName={group[0]} games={group[1]} size={settings.iconSize}/>
+                    <GroupHeader key={group[0]} teamName={group[0]} games={group[1]} size={settings.iconSize} />
                 )))
                 break
             case "sortByWins":
-                const profit = CircleFunctions.moveCirclesWinLoss(svg, width, height, settings);
-                setGroupComponents([profit.map((d, i) => (
-                    <Profit key={i} i={i} profit={d} width={width} height={height} adjust={settings.profitAdjust}/>
+                const { profits, winLossGroups } = CircleFunctions.moveCirclesWinLoss(svg, width, height, settings);
+                setGroupComponents([profits.map((d, i) => (
+                    <Profit key={i} i={i} profit={d} groups={winLossGroups.get("win")} width={width} height={height} adjust={settings.profitAdjust} />
                 ))])
                 break
             default:

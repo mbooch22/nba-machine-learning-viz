@@ -65,7 +65,6 @@ const Circles = (props) => {
         setScrollSection("TOP");
         
         // The bottom of the element is visible, show the alert
-        console.log('You have scrolled to the TOP of the section!');
         const svg = d3.select(circlesRef.current);
 
         CircleFunctions.moveCirclesRandom(svg, data, width, height, settings);

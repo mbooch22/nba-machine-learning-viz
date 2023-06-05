@@ -17,7 +17,6 @@ function Home() {
   const [scrollSection, setScrollSection] = useState("TOP");
   const width = window.innerWidth - 100;
   const height = window.outerHeight;
-  console.log("Test" + isMobile.toString())
   const settings = isMobile ?
     {
       width: window.innerWidth,
@@ -29,7 +28,7 @@ function Home() {
       moveByHomeTeam: [15, 200, 25, 25,100],
       iconSize: [25, 35,12],
       moveCirclesWinLoss: [10, 300],
-      profitAdjust: [2,5]
+      profitAdjust: [30,30]
     } :
     {
       width: window.innerWidth - 50,
@@ -41,7 +40,7 @@ function Home() {
       moveByHomeTeam: [35, 200, 25, 25,200],
       iconSize: [50, 75,25], 
       moveCirclesWinLoss: [100, 200],
-      profitAdjust: [2,8]
+      profitAdjust: [30,15]
     }
   return (
     <>

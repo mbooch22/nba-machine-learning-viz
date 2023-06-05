@@ -8,7 +8,7 @@ function About() {
   return (
     <StyledAbout >
       <h1>About</h1>
-      <p>This is the about page of your app.</p>
+      <p>TODO :)</p>
     </StyledAbout >
   );
 }

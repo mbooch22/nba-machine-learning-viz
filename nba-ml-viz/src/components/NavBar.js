@@ -28,9 +28,8 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="sticky">
-      <Container>
-        <Toolbar >
-          <Box display="flex" justifyContent="center">
+        <Toolbar  >
+          <Box >
             {pages.map((page) => (
               <Button color="inherit" onClick={() => handleClick(page.link)}
                 key={page.Text}
@@ -41,13 +40,13 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
-          <Box display="flex" justifyContent="center">
+          <Box >
             <Popover placement={"bottom-start"} >
               <Button ref={clickMeButtonRef} color="inherit" onClick={() => setIsPopoverOpen(!isPopoverOpen)}>
                 <Typography >Teams</Typography>
               </Button>
               <StyledPopover>
-                <Box display="flex" justifyContent="center">
+                <Box >
                   <TeamsSection />
                 </Box>
               </StyledPopover>
@@ -56,7 +55,6 @@ function ResponsiveAppBar() {
 
           </Box>
         </Toolbar>
-      </Container>
     </AppBar>
   );
 }

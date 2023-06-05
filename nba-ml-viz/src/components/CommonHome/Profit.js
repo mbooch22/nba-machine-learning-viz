@@ -6,27 +6,29 @@ const ProfitContainer = styled.div`
 
 `
 
-const Profit = ({ i, profit, width, height, adjust }) => {
+const Profit = ({ i, profit, width, height, adjust, groups }) => {
     let profitFormatted = "";
     let xAdjust = 0;
+    const xPos = groups[adjust[1]].x;
+    const yPos = groups[0].y - adjust[0];
     switch(i){
         case 0:
             profitFormatted = `💲${profit}`
-            xAdjust = -75
+            xAdjust = 0
             break;
         case 1:
             profitFormatted = `➖💲${Math.abs(profit)}`
-            xAdjust = 0
+            xAdjust = 75
             break;
         case 2:
             profitFormatted = `󠀽󠀽= 💲${profit}`
-            xAdjust = 100
+            xAdjust = 175
             break;
         default:
             break;
     }
     return (
-        <text className='moreinfo-profit' x={width / adjust[0] + xAdjust} y={height/adjust[1]}>
+        <text className='moreinfo-profit' x={xPos + xAdjust} y={yPos}>
             {profitFormatted}
         </text>
 

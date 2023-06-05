@@ -9,12 +9,15 @@ import NotFound from './components/NotFound';
 import TeamPage from './components/TeamPage/TeamPage';
 import GamePage from './components/GamePage';
 import GithubCorner from 'react-github-corner';
+import Box from '@material-ui/core/Box';
 
 function App() {
   return (
     <Router>
       <GlobalStyles />
-      <ResponsiveAppBar/>
+      <Box display="flex" justifyContent="center">
+        <ResponsiveAppBar/>
+      </Box>
       <Routes>
         <Route exact path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
