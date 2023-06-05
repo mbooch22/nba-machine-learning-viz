@@ -19,11 +19,11 @@ function App() {
         <ResponsiveAppBar/>
       </Box>
       <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path='/game/:gameID' element={<GamePage/>} />
-        <Route path='/team/:teamAbr' element={<TeamPage />} />
-        <Route path='/*' element={<NotFound  />} />
+        <Route exact path="/nba-machine-learning-viz" element={<Home/>} />
+        <Route path="/nba-machine-learning-viz/about" element={<About/>} />
+        <Route path='/nba-machine-learning-viz/game/:gameID' element={<GamePage/>} />
+        <Route path='/nba-machine-learning-viz/team/:teamAbr' element={<TeamPage />} />
+        <Route path='/nba-machine-learning-viz/*' element={<NotFound  />} />
       </Routes>
     </Router>
   );
