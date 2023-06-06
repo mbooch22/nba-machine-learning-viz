@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nba-machine-learning-viz/static/css/main.5e123ad3.css",
-    "main.js": "/nba-machine-learning-viz/static/js/main.f46c5646.js",
+    "main.js": "/nba-machine-learning-viz/static/js/main.9691cbdb.js",
     "static/js/787.2a325399.chunk.js": "/nba-machine-learning-viz/static/js/787.2a325399.chunk.js",
     "index.html": "/nba-machine-learning-viz/index.html",
     "static/media/slick.svg": "/nba-machine-learning-viz/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -9,11 +9,11 @@
     "static/media/slick.ttf": "/nba-machine-learning-viz/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/nba-machine-learning-viz/static/media/slick.295183786cd8a1389865.woff",
     "main.5e123ad3.css.map": "/nba-machine-learning-viz/static/css/main.5e123ad3.css.map",
-    "main.f46c5646.js.map": "/nba-machine-learning-viz/static/js/main.f46c5646.js.map",
+    "main.9691cbdb.js.map": "/nba-machine-learning-viz/static/js/main.9691cbdb.js.map",
     "787.2a325399.chunk.js.map": "/nba-machine-learning-viz/static/js/787.2a325399.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5e123ad3.css",
-    "static/js/main.f46c5646.js"
+    "static/js/main.9691cbdb.js"
   ]
 }
