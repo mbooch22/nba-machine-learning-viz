@@ -107,7 +107,7 @@ const ProfitOverTime = ({ data, width, height }) => {
             });
         })
         .on("click", d => {
-            navigate(`/date/${d.currentTarget.__data__.date}`)
+            navigate(`/nba-machine-learning-viz/date/${d.currentTarget.__data__.date}`)
         });
 
         // group.transition(t)

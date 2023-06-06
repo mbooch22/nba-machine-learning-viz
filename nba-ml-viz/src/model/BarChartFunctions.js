@@ -71,7 +71,7 @@ const BarChartFunctions = {
                 });
             })
             .on("click", d => {
-                navigate(`/game/${d.currentTarget.__data__.id}`)
+                navigate(`/nba-machine-learning-viz/game/${d.currentTarget.__data__.id}`)
             });
 
 
@@ -147,7 +147,7 @@ const BarChartFunctions = {
                 });
             })
             .on("click", d => {
-                navigate(`/game/${d.currentTarget.__data__.id}`)
+                navigate(`/nba-machine-learning-viz/game/${d.currentTarget.__data__.id}`)
             });
 
 
@@ -226,7 +226,7 @@ const BarChartFunctions = {
                 });
             })
             .on("click", d => {
-                navigate(`/game/${d.currentTarget.__data__.id}`)
+                navigate(`/nba-machine-learning-viz/game/${d.currentTarget.__data__.id}`)
             });
 
 

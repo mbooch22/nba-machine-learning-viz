@@ -101,7 +101,7 @@ const ProfitByTeam = ({ data, width, height }) => {
             .attr("width", 0)
             .attr("height", yAxisScale.step() * (1 - 0.4))
             .on("click", d => {
-                navigate(`/team/${d.currentTarget.__data__.team}`)
+                navigate(`/nba-machine-learning-viz/team/${d.currentTarget.__data__.team}`)
             })
             .on("mouseover", d => {
                 setTooltipState({

@@ -10,7 +10,7 @@ const TeamsSection = (props) => {
         const TeamIcon = NBAIcons[team.abbreviation];
         return (
             <Button className="nbaIcon" key={team.abbreviation}>
-                <Link  to={`team/${team.abbreviation}`}>
+                <Link  to={`/nba-machine-learning-viz/  team/${team.abbreviation}`}>
                 <TeamIcon></TeamIcon>
                 </Link>
             </Button>

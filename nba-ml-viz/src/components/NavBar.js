@@ -11,7 +11,7 @@ import TeamsSection from './TeamsSections';
 import styled from 'styled-components';
 
 
-const pages = [{ Text: 'Home', link: "/" }, { Text: 'About', link: "/about" }];
+const pages = [{ Text: 'Home', link: "/nba-machine-learning-viz/" }, { Text: 'About', link: "/nba-machine-learning-viz/about" }];
 
 const StyledPopover = styled.div`
     width: ${window.innerWidth/2}px;

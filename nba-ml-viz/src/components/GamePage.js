@@ -39,6 +39,11 @@ const GamePage = () => {
                 {homeTeamLogo}
             </div>
             {gameID}
+            <div>
+                <span>
+                    Individual Game - TODO :)
+                </span>
+            </div>
         </>
     );
 };

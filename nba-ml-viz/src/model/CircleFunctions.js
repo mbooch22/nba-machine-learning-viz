@@ -81,7 +81,7 @@ const CircleFunctions = {
                 });
             })
             .on("click", d => {
-                navigate(`/game/${d.currentTarget.__data__.id}`)
+                navigate(`/nba-machine-learning-viz/game/${d.currentTarget.__data__.id}`)
             });
 
         circles
@@ -119,7 +119,7 @@ const CircleFunctions = {
                 });
             })
             .on("click", d => {
-                navigate(`game/${d.currentTarget.__data__.id}`)
+                navigate(`/nba-machine-learning-viz/game/${d.currentTarget.__data__.id}`)
             });
 
         circles
